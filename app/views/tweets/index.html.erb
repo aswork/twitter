@@ -1,7 +1,26 @@
-<h1>tweet一覧</h1>
 
-<%= link_to "ツイートする", new_tweet_path %>
+<div class="container">
+<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+<p><%= notice %></p>
+
+<%= image_tag 'rogo.png', :size => '300x100' %>
+<p class="center">
+<%= link_to "ツイートする", new_tweet_path, class: "btn btn-lg btn-primary btn-sm" %>
+</p>
 
 <% @tweets.each do |tweet| %>
-  <p>本文:<%= tweet.content %></p>
+<div class="row">
+      <p class="left">
+      <%= tweet.content %>
+      </p>
+      <p class="right">
+      <%= link_to "編集", edit_tweet_path(tweet.id), class: "btn btn-lg btn-primary btn-sm" %>
+      <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: "btn btn-lg btn-primary btn-sm" %>
+      </p>
+ </div>
 <% end %>
+
+   
+  </div>
+</div>

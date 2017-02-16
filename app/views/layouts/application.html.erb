@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twitter</title>
+  <title>Tweeet</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  
+  
+<header>
+  <%= link_to image_tag('rogo.png',:size => '150x50'), root_path %>
+</header>
+   
+
 
 <%= yield %>
+
+  <footer>
+    <p>Twetter類似アプリ</p>
+    <p>DIVE07　EXAM</p>
+  </footer>
 
 </body>
 </html>
